@@ -12,7 +12,7 @@ pivot_longer(
   names_to = "Time",
   values_to = "Score",
   # ensure the Time column is stored as a numeric column
-  names_ptypes = list(Time = double())
+  names_transform = list(Time = readr::parse_number)
 )
 
 # tidy `results`
