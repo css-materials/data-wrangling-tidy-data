@@ -15,12 +15,6 @@ pivot_longer(
   names_transform = list(Time = readr::parse_number)
 )
 
-# tidy `results`
-results
-
-## tidying operation
-pivot_wider(data = results, names_from = Treatment, values_from = value)
-
 # tidy `grades`
 grades
 

@@ -8,12 +8,6 @@ race
 ## tidying operation
 
 
-# tidy `results`
-results
-
-## tidying operation
-
-
 # tidy `grades`
 grades
 
