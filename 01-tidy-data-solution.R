@@ -1,11 +1,18 @@
+# Practice tidy data - solutions
+
+# look at the website page "Practice tidying data"
+# for info about the data structure of each of these datasets
+
 # load required packages
 library(tidyverse)
 library(rcis)
 
-# tidy `race`
+# 1. tidy `race`
+
+# check
 race
 
-## tidying operation
+# tidying the race dataset
 pivot_longer(
   data = race,
   cols = -Name,
@@ -15,10 +22,13 @@ pivot_longer(
   names_transform = parse_number
 )
 
-# tidy `grades`
+
+# 2. tidy `grades`
+
+# check
 grades
 
-## tidying operation
+# tidying the grades dataset
 pivot_longer(
   data = grades,
   cols = c(Fall:Winter),
@@ -30,10 +40,13 @@ pivot_longer(
     values_from = Score
   )
 
-# tidy `activities`
+
+# 3. tidy `activities`
+
+# check
 activities
 
-## tidying operation
+# tidying the activities dataset
 pivot_longer(
   data = activities,
   cols = c(work.T1:talk.T2),
@@ -41,4 +54,5 @@ pivot_longer(
   values_to = "value"
 ) %>%
   separate(variable, into = c("location", "time")) %>%
-  pivot_wider(names_from = location, values_from = value)
+  pivot_wider(names_from = location,
+              values_from = value)
