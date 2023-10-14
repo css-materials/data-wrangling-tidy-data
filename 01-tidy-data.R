@@ -1,60 +1,44 @@
-# Practice tidy data
+# PRACTICE TIDYING DATA
 
-# look at the website page "Practice tidying data"
-# for info about the data structure of each of these datasets
+
+# before you write the code, write what you think 
+# the tidy data structure should look like
 
 # load required packages
 library(tidyverse)
 library(rcis)
 
-# 1. tidy `race`
+
+# 1. TIDY THE `RACE SCORES` DATA
+# race scores of 4 individuals
+# columns are different times, cell values are scores
 
 # check
 race
 
-# tidying the race dataset
-pivot_longer(
-  data = __________,
-  cols = - ________,
-  names_to = __________,
-  values_to = _________,
-  names_transform = parse_number
-)
+# tidy this data (hint: requires pivot_longer)
 
 
-# 2. tidy `grades`
+
+
+# 2. TIDY THE `GRADES` DATA
+# grades of different individuals in two tests (math, writing)
+# measured at different points in time (quarter, year)
 
 # check
 grades
 
-# tidying the grades dataset
-pivot_longer(
-  data = ____________,
-  cols = ____________,
-  names_to = ________,
-  values_to = _______
-) %>%
-  pivot_wider(
-    names_from = ___________,
-    values_from = __________
-  )
+# tidy this data (hint: requires pivot_longer and pivot_wider)
 
 
-# 3. tidy `activities`
+
+
+# 3. TIDY THE `ACTIVITIES` DATA
+# different activities (work, play, talk) at two points in time
+# performed by individuals in a treatment or control group
 
 # check
 activities
 
-# tidying the activities dataset
-pivot_longer(
-  data = _____________,
-  cols = _____________,
-  names_to = ____________,
-  values_to = ___________
-) %>%
-  separate( __________, into = ____________ ) %>%
-  pivot_wider(names_from = ________, 
-              values_from = ___________)
-
-
+# tidy this data (hint: requires multiple transformations)
 

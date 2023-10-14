@@ -1,13 +1,11 @@
-# Practice tidy data - solutions
+# PRACTICE TIDYING DATA - SOLUTIONS
 
-# look at the website page "Practice tidying data"
-# for info about the data structure of each of these datasets
 
 # load required packages
 library(tidyverse)
 library(rcis)
 
-# 1. tidy `race`
+# 1. TIDY THE `RACE ` DATA
 
 # check
 race
@@ -15,15 +13,27 @@ race
 # tidying the race dataset
 pivot_longer(
   data = race,
-  cols = -Name,
+  cols = c(`50` : `350`), 
   names_to = "Time",
   values_to = "Score",
   # ensure the Time column is stored as a numeric column
+  names_transform = list(Time = as.double)
+)
+
+# slightly different code to do the same
+pivot_longer(
+  data = race,
+  # the - drops the variable
+  cols = -Name, 
+  names_to = "Time",
+  values_to = "Score",
+  # ensure the Time column is stored as a numeric column 
+  # parse_number is a function from readr to convert a character to a numeric vector
   names_transform = parse_number
 )
 
 
-# 2. tidy `grades`
+# 2. TIDY THE `GRADES` DATA
 
 # check
 grades
@@ -41,7 +51,8 @@ pivot_longer(
   )
 
 
-# 3. tidy `activities`
+
+# 3. TIDY THE `ACTIVITIES` DATA
 
 # check
 activities
