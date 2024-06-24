@@ -1,7 +1,7 @@
 # PRACTICE TIDYING DATA
 
 
-# before you write the code, write what you think 
+# before you type the code, write down what you think 
 # the tidy data structure should look like
 
 # load required packages
