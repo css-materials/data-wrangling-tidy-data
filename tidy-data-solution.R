@@ -1,6 +1,5 @@
 # PRACTICE TIDYING DATA - SOLUTIONS
 
-
 # load required packages
 library(tidyverse)
 library(rcis)
@@ -10,7 +9,7 @@ library(rcis)
 # check
 race
 
-# tidying the race dataset
+# solution a
 pivot_longer(
   data = race,
   cols = c(`50` : `350`), 
@@ -20,17 +19,17 @@ pivot_longer(
   names_transform = list(Time = as.double)
 )
 
-# slightly different code to do the same
+# solution b
 pivot_longer(
   data = race,
-  # the - drops the variable
+  # take everything beside Name
   cols = -Name, 
   names_to = "Time",
-  values_to = "Score",
+  values_to = "Score") %>%
   # ensure the Time column is stored as a numeric column 
   # parse_number is a function from readr to convert a character to a numeric vector
-  names_transform = parse_number
-)
+  mutate(Time = parse_number(Time))
+
 
 
 # 2. TIDY THE `GRADES` DATA

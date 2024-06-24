@@ -1,6 +1,7 @@
 # PRACTICE TIDYING DATA
 
 
+# KEY STEP:
 # before you type the code, write down what you think 
 # the tidy data structure should look like
 
